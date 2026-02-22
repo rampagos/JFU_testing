@@ -265,7 +265,7 @@ faction_goal_unlock_research = {
 	category = short_term
 	group = FOCUS_FILTER_INTERNAL_AFFAIRS
 	available = {
-		FROM = { num_faction_members > 2 }
+		#FROM = { num_faction_members > 2 }
 	}
 	visible = {
 		FROM = { has_faction_research_unlocked = no }
@@ -341,7 +341,7 @@ faction_goal_unlock_military = {
 	category = short_term
 	group = FOCUS_FILTER_INTERNAL_AFFAIRS
 	available = {
-		FROM = { num_faction_members > 2 }
+		#FROM = { num_faction_members > 2 }
 	}
 	visible = {
 		FROM = { has_faction_military_unlocked = no }
@@ -417,15 +417,17 @@ faction_goal_spy_master = {
 	group = FOCUS_FILTER_POLITICAL_CHARACTER
 	category = short_term
 	allowed = {
-		has_dlc = "La Resistance"
+		#has_dlc = "La Resistance"
+		always = no
 	}
 	visible = {
-		FROM = {
-			is_spymaster = no
-			any_allied_country = {
-				is_spymaster = no
-			}
-		}
+		#FROM = {
+		#	is_spymaster = no
+		#	any_allied_country = {
+		#		is_spymaster = no
+		#	}
+		#}
+		always = no
 	}
 	completed = {
 		OR = {
