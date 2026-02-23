@@ -1840,5 +1840,41 @@ ideas = {
 			}
 		}
 
+	Air_Suppiority_reward = {
+
+		name ="Luftüberlgenheit"
+		
+			removal_cost = -1
+
+			allowed = {
+				always = no
+			}	
+
+			picture = generic_artillery_regiments 
+
+			modifier = {
+				air_mission_efficiency  = 0.1
+			}
+
+
+		}
+	Air_Bombing_reward = {
+
+		name ="Stategic Destruction"
+		
+			removal_cost = -1
+
+			allowed = {
+				always = no
+			}	
+
+			picture = generic_artillery_regiments 
+
+			modifier = {
+				air_strategic_bomber_bombing_factor = 0.1
+			}
+
+
+		}
 	}
 }

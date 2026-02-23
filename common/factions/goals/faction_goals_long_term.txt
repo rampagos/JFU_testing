@@ -738,6 +738,16 @@ faction_goal_strategic_bombing_campaign = {
 				track = heavy_aircraft
 			}
 		}
+		every_faction_member = {
+			limit = {
+				is_faction_leader = yes
+			}
+			add_timed_idea = {
+				idea = Air_Bombing_reward
+				days = 180
+			}
+			add_faction_initiative = 1
+		}
 	}
 	ai_will_do = {
 		base = 0

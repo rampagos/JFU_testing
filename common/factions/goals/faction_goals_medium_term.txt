@@ -696,10 +696,14 @@ faction_goal_a_large_faction = {
 	category = medium_term
 	group = FOCUS_FILTER_POLITICAL_CHARACTER
 	visible = {
-		num_faction_members > 4
+		#num_faction_members > 4
+		always = no
+	}
+	allowed = {
+		always = no
 	}
 	completed = {
-		num_faction_members > 9
+		#num_faction_members > 9
 	}
 	complete_effect = {
 		add_faction_power_projection = 200
@@ -983,7 +987,7 @@ faction_goal_air_superiority = {
 				name = FACTION
 			}
 			unit = fighter
-			size > 999
+			size > 3999
 		}
 	}
 	complete_effect = {
@@ -1011,14 +1015,26 @@ faction_goal_air_superiority = {
 		}
 		custom_effect_tooltip = generic_skip_one_line_tt
 		custom_effect_tooltip = ALL_FACTION_MEMBERS
+
 		every_faction_member = {
-			add_tech_bonus = {
-				name = air_superiority_tech_bonus
-				bonus = 0.5
-				uses = 1
-				category = air_equipment
+			limit = {
+				is_faction_leader = yes
 			}
+			add_timed_idea = {
+				idea = Air_Suppiority_reward
+				days = 180
+			}
+			add_faction_initiative = 1
 		}
+		
+		#every_faction_member = {
+		#	add_tech_bonus = {
+		#		name = air_superiority_tech_bonus
+		#		bonus = 0.5
+		#		uses = 1
+		#		category = air_equipment
+		#	}
+		#}
 	}
 	ai_will_do = {
 		base = 0
@@ -1530,26 +1546,27 @@ faction_goal_control_venezuelan_oil = {
 		
 	}
 	visible = {
-		FROM = {
-			NOT = {
-				original_tag = VEN
-				is_in_faction_with = VEN
-			}
-		}
-		any_collection_element = {
-			collection = {
-				 input = game:scope
-				 operators = { faction_members controlled_states }
-				 name = FACTION_CONTROLLED_STATES
-			}
-			distance_to = {
-				target = 307
-				value < 2000
-			}
-		}
+		#FROM = {
+		#	NOT = {
+		#		original_tag = VEN
+		#		is_in_faction_with = VEN
+		#	}
+		#}
+		#any_collection_element = {
+		#	collection = {
+		#		 input = game:scope
+		#		 operators = { faction_members controlled_states }
+		#		 name = FACTION_CONTROLLED_STATES
+		#	}
+		#	distance_to = {
+		#		target = 307
+		#		value < 2000
+		#	}
+		#}
+		always = no
 	}
 	available = {
-
+		always = no
 	}
 	completed = {
 		489 = { is_controlled_by_ROOT_or_ally = yes }
@@ -1832,25 +1849,27 @@ faction_goal_control_lappland_metals = {
 		
 	}
 	visible = {
-		FROM = {
-			NOT = {
-				original_tag = SWE
-				is_in_faction_with = SWE
-			}
-		}
-		any_collection_element = {
-			collection = {
-				 input = game:scope
-				 operators = { faction_members controlled_states }
-				 name = FACTION_CONTROLLED_STATES
-			}
-			distance_to = {
-				target = 918
-				value < 2000
-			}
-		}
+		#FROM = {
+		#	NOT = {
+		#		original_tag = SWE
+		#		is_in_faction_with = SWE
+		#	}
+		#}
+		#any_collection_element = {
+		#	collection = {
+		#		 input = game:scope
+		#		 operators = { faction_members controlled_states }
+		#		 name = FACTION_CONTROLLED_STATES
+		#	}
+		#	distance_to = {
+		#		target = 918
+		#		value < 2000
+		#	}
+		#}
+		always = no
 	}
 	available = {
+		always = no
 		
 	}
 	completed = {
