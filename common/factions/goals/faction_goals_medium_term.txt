@@ -68,6 +68,10 @@ faction_goal_undo_versailles = {
 				original_tag = GER
 			}
 			add_faction_initiative = 1
+			swap_ideas = {
+				remove_idea = sour_loser
+				add_idea = triumphant_will
+			}
 		}
 		custom_effect_tooltip = generic_skip_one_line_tt
 		every_faction_member = { 
@@ -135,6 +139,99 @@ faction_goal_secure_european_continent = {
 		modifier = {
 			add = 9
 			is_historical_focus_on = yes
+		}
+	}
+}
+
+faction_goal_führer_directive21 = {
+	name = "Führer Directive 21"
+	description = "Control of the Major Cities of the Soviet Union will ensure a dominant Position for the War"
+	group = FOCUS_FILTER_ANNEXATION
+	category = medium_term
+
+	visible = {
+		OR = {
+			FROM = { original_tag = GER }
+			any_allied_country = {
+				original_tag = GER
+			}
+		}
+	}
+
+	available = {
+		OR = {
+			FROM = { has_completed_focus = GER_war_with_the_ussr }
+			any_allied_country = {
+				has_completed_focus = GER_war_with_the_ussr
+			}
+		}
+	}
+
+	completed = {
+		date < 1942.1.1
+		AND = {
+			195 = {  is_controlled_by_ROOT_or_ally = yes } # Leningrad
+			219 = {  is_controlled_by_ROOT_or_ally = yes } # Moscow
+			217 = {  is_controlled_by_ROOT_or_ally = yes } # Stalingrad
+		}
+	}
+
+	complete_effect = {
+		add_faction_power_projection = 500
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = INFLUENCE_TOP_TWO
+		every_faction_member = {
+			limit = {
+				faction_influence_rank < 3
+			}
+			add_faction_initiative = 1
+			add_political_power = 100 
+		}
+	}
+}
+faction_goal_führer_directive41 = {
+	name = "Führer Directive 41"
+	description = "Control of the Major Cities of the Soviet Union will ensure a dominant Position for the War"
+	group = FOCUS_FILTER_ANNEXATION
+	category = medium_term
+
+	visible = {
+		OR = {
+			FROM = { original_tag = GER }
+			any_allied_country = {
+				original_tag = GER
+			}
+		}
+	}
+
+	available = {
+		OR = {
+			FROM = { has_completed_focus = GER_focus_fall_blau }
+			any_allied_country = {
+				has_completed_focus = GER_focus_fall_blau
+			}
+		}
+	}
+
+	completed = {
+		date < 1943.1.1
+		AND = {
+			195 = {  is_controlled_by_ROOT_or_ally = yes } # Leningrad
+			219 = {  is_controlled_by_ROOT_or_ally = yes } # Moscow
+			217 = {  is_controlled_by_ROOT_or_ally = yes } # Stalingrad
+		}
+	}
+
+	complete_effect = {
+		add_faction_power_projection = 500
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = INFLUENCE_TOP_TWO
+		every_faction_member = {
+			limit = {
+				faction_influence_rank < 3
+			}
+			add_faction_initiative = 1
+			add_political_power = 100 
 		}
 	}
 }
@@ -1159,6 +1256,10 @@ faction_goal_industrial_research = {
 				faction_influence_ratio > 0.3
 			}
 			add_faction_initiative = 1
+			add_timed_idea = {
+				idea = construction_effort
+				days = 180
+			}
 		}
 	}
 	ai_will_do = {

@@ -1876,5 +1876,21 @@ ideas = {
 
 
 		}
+
+	construction_effort = {
+		name = "Construction Effort"
+
+		removal_cost = -1
+
+		allowed = {
+			always = no
+		}
+
+		picture = generic_artillery_regiments
+
+		modifier = {
+			consumer_goods_factor = -0.1
+		}
+	}
 	}
 }

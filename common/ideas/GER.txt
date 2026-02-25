@@ -59,9 +59,10 @@ ideas = {
 			}
 			
 			modifier = {
-				political_power_gain = 1
+				political_power_gain = 0.1
 				drift_defence_factor = 0.75
 				monthly_population = 0.15
+				operative_slot = 2
 			}
 			rule = {
 				can_create_factions = yes
